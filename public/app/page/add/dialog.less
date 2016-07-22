@@ -1,0 +1,129 @@
+.outer-dialog{
+  position: fixed;
+  left:0;
+  bottom: 0;
+  width: 100%;
+  height:60px;
+  background-color: rgba(247, 247, 248, 0.85);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding-top: 10px;
+  ul{
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  li{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 55px;
+    &:before{
+      font-size: 25px;
+    }
+    &:after{
+      font-size:14px;
+      margin-top: 4px;
+    }
+  }
+  &.add{
+    li{
+      &.pic{
+        position: relative;
+        input{
+          left: 12px;
+          top:0;
+          width: 30px;
+          height: 45px;
+          position: absolute;
+          opacity:0;
+          overflow: hidden;
+        }
+        &:before{
+          content: '\e604';
+        }
+        &:after{
+          content: '照片';
+        }
+      }
+      &.text{
+        &:before{
+          content: '\e603';
+        }
+        &:after{
+          content: '文本';
+        }
+      }
+      &.page{
+        &:before{
+          content: '\e607';
+        }
+        &:after{
+          content: '页面';
+        }
+      }
+      &.mult{
+        &:before{
+          content: '\e60c';
+        }
+        &:after{
+          content: '多选开';
+        }
+        &.close{
+          &:before{
+            content: '\e60e';
+          }
+          &:after{
+            content: '多选关';
+          }
+        }
+      }
+    }
+  }
+  &.attribute{
+    li{
+      &.copy{
+        &:before{
+          content: '\e609';
+        }
+        &:after{
+          content: '复制';
+        }
+      }
+      &.del{
+        &:before{
+          content: '\e608';
+        }
+        &:after{
+          content: '删除';
+        }
+      }
+      &.up-index{
+        &:before{
+          content: '\e60b';
+        }
+        &:after{
+          content: '层级加';
+        }
+      }
+      &.down-index{
+        &:before{
+          content: '\e60b';
+          transform: scaleY(-1);
+        }
+        &:after{
+          content: '层级减';
+        }
+      }
+      &.animation{
+        &:before{
+          content: '\e60d';
+        }
+        &:after{
+          content: '动画';
+        }
+      }
+    }
+  }
+}

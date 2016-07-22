@@ -1,0 +1,24 @@
+.view.add{
+  >.page{
+    margin-top: 0;
+  }
+  .canvas{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: #01bbba;
+    position: relative;
+    svg{
+      display: block;
+    }
+    .editor{
+      .editor-item{
+        position: absolute;
+        background:rgba(255,255,255,0.2);
+        border: solid 1px #fff;
+      }
+    }
+  }
+}
+@import "dialog";
+@import "window";

@@ -1,0 +1,39 @@
+html,
+body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+a img {
+  border: 0;
+}
+a {
+  color: #01bbba;
+  text-decoration: none;
+}
+i {
+  font-style: normal;
+}
+ul {
+  list-style: none;
+}
+body {
+  font-size: 16px;
+}
+.view.has-navbar > .page {
+  margin-top: 44px;
+}
+.view.has-toolbar > .page {
+  margin-bottom: 50px;
+}
+
+/*# sourceMappingURL=app.css.map*/
