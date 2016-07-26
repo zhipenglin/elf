@@ -16,6 +16,7 @@ export default class Item{
         this.x=x||(document.documentElement.clientWidth)/2;
         this.y=y||(document.documentElement.clientHeight)/2;
         this.editor=false;
+        this.animations=[];
         this.event={
             isMove:undefined,
             start:{
@@ -54,5 +55,8 @@ export default class Item{
     }
     copy(){
         return new Item({type:this.type,data:this.data,x:this.x,y:this.y});
+    }
+    addAnimation(){
+        
     }
 }

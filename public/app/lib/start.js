@@ -3,9 +3,11 @@
  */
 import Vue from 'vue'
 import Router from 'vue-router'
+import Vuex from 'vuex'
 
 import plugin from './plugin'
 import routerConfig from '../router'
+import store from '../vuex/store'
 import { default as getFetch,parseParam} from './fetch'
 
 import Navbar from '../modules/navbar'
@@ -111,6 +113,7 @@ var route=(()=>{
 })();
 
 var App=Vue.extend({
+    store,
     template:`<div class="app">
                     <router-view class="view" transition="slide"></router-view>
                 </div>`

@@ -1,39 +1,36 @@
 <template>
-    <div class="outer-dialog add" v-if="show">
+    <div class="outer-dialog add" v-if="add.stateType=='add'">
         <ul>
             <li class="pic iconfont"><input type="file" @change="selected"/></li>
             <li class="text iconfont"></li>
             <li class="page iconfont"></li>
-            <li class="mult iconfont" :class="{'close':!mult}" @click="multChange"></li>
+            <li class="mult iconfont" :class="{'close':!add.setting.multSelect}" @click="multChange"></li>
         </ul>
     </div>
 </template>
 <script type="text/ecmascript-6">
-    import upload from '../../modules/upload/lib/upload'
+    import upload from '../../../modules/upload/lib/upload'
+    import {itemAdd,multChange} from '../../../vuex/actions/add'
     export default{
-        props:{
-            show:{
-                type:Boolean,
-                twoWay:true,
-                default:false
+        vuex:{
+            getters:{
+                add:state=>state.add
             },
-            mult:{
-                type:Boolean,
-                twoWay:true,
-                default:false
+            actions:{
+                itemAdd,multChange
             }
         },
         methods:{
             selected(e){
                 upload(event.target.files[0]).then((data)=>{
-                    this.$dispatch('add',{
+                    this.itemAdd({
                         type:'image',
                         data:data
                     });
                 })
             },
             multChange(){
-                this.mult=!this.mult;
+                this.multChange();
             }
         }
     }

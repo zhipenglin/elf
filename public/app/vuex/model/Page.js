@@ -10,9 +10,6 @@ export default class Page{
         this.width=document.documentElement.clientWidth;
         this.height=document.documentElement.clientHeight;
         this.itemList=[];
-        this.setting={
-            multSelect:true
-        };
     }
     push(item){
         switch (item.type){

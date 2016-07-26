@@ -1,10 +1,10 @@
 webpackJsonp([1],{
 
-/***/ 57:
+/***/ 56:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_template__ = __webpack_require__(58)
+	__vue_template__ = __webpack_require__(57)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -24,7 +24,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 58:
+/***/ 57:
 /***/ function(module, exports) {
 
 	module.exports = "\n<a v-link=\"{name:'add'}\">list</a>\n";
