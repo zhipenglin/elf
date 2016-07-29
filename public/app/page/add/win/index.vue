@@ -3,8 +3,6 @@
     <component :is="componentName"></component>
 </template>
 <script type="text/ecmascript-6">
-    import Add from './Add.vue'
-    import Attribute from './Attribute.vue'
     import AnimationList from './AnimationList.vue'
     import AddAnimation from './AddAnimation.vue'
     export default {
@@ -16,8 +14,6 @@
         computed:{
             componentName(){
                 var map={
-                    'add':'Add',
-                    'attr':'Attribute',
                     'anim-list':'AnimationList',
                     'anim-add':'AddAnimation'
                 };
@@ -25,7 +21,7 @@
             }
         },
         components:{
-            Add,Attribute,AnimationList,AddAnimation
+            AnimationList,AddAnimation
         }
     }
 </script>

@@ -12,21 +12,23 @@
         </div>
     </div>
     <dialog></dialog>
+    <win></win>
 </template>
 <script type="text/ecmascript-6">
     import {stateChangeInit,stateChangeAdd,stateChangeAttr,itemEditor} from '../../vuex/actions/add'
-    import dialog from './dialog/index.vue'
+    import dialog from './dialog'
+    import win from './win'
     export default {
         vuex:{
             getters:{
                 add:state=>state.add
             },
             actions:{
-                stateChangeInit,stateChangeAdd,stateChangeAttr,itemEditor
+                stateChangeInit,stateChangeAdd,itemEditor
             }
         },
         components:{
-            dialog
+            dialog,win
         },
         methods:{
             rightMenu(){
@@ -37,11 +39,6 @@
             },
             editor(item){
                 this.itemEditor(item);
-                if(this.add.page.hasEditorItem()){
-                    this.stateChangeAttr();
-                }else{
-                    this.stateChangeInit();
-                }
             },
             touchStart(item,e){
                 item.touchStart(e);

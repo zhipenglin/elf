@@ -1,14 +1,11 @@
 /**
  * Created by ifchangetoclzp on 2016/7/20.
  */
-import Item from './Item'
 import ImageItem from './ImageItem'
 import find from 'lodash.find'
 import filter from 'lodash.filter'
 export default class Page{
     constructor(){
-        this.width=document.documentElement.clientWidth;
-        this.height=document.documentElement.clientHeight;
         this.itemList=[];
     }
     push(item){
@@ -25,6 +22,9 @@ export default class Page{
     }
     hasEditorItem(){
         return !!find(this.itemList,n=>n.editor);
+    }
+    getFirstEditorItem(){
+        return find(this.itemList,n=>n.editor);
     }
     delItems(){
         this.itemList=filter(this.itemList,n=>!n.editor);
@@ -47,5 +47,8 @@ export default class Page{
                 this.itemList.splice(i-1,0,item);
             }
         }
+    }
+    getLength(){
+        return this.itemList.length;
     }
 }

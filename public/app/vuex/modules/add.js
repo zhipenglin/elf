@@ -19,8 +19,11 @@ const mutations={
     STATE_CHANGE_ATTR(state){
         state.stateType='attr';
     },
-    STATE_CHANGE_ANIM(state){
-        state.stateType='anim';
+    STATE_CHANGE_ANIM_LIST(state){
+        state.stateType='anim-list';
+    },
+    STATE_CHANGE_ANIM_ADD(state){
+        state.stateType='anim-add';
     },
     STATE_CHANGE_INIT(state){
         state.stateType='init';

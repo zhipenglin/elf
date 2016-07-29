@@ -7,17 +7,29 @@ import makeAction from './makeAction'
 //STATE
 export const stateChangeAdd=makeAction('STATE_CHANGE_ADD');
 export const stateChangeAttr=makeAction('STATE_CHANGE_ATTR');
-export const stateChangeAnim=makeAction('STATE_CHANGE_ANIM');
+export const stateChangeAnimList=makeAction('STATE_CHANGE_ANIM_LIST');
+export const stateChangeAnimAdd=makeAction('STATE_CHANGE_ANIM_ADD');
 export const stateChangeInit=makeAction('STATE_CHANGE_INIT');
 
 //ITEM
 export const itemAdd=makeAction('ITEM_ADD');
 export const itemCopy=makeAction('ITEM_COPY');
-export const itemDel=makeAction('ITEM_DEL');
+export const itemDel=({ dispatch, state },...args)=>{
+    dispatch('ITEM_DEL');
+    if(!state.add.page.getLength()){
+        dispatch('STATE_CHANGE_INIT');
+    }
+};
 export const itemUpIndex=makeAction('ITEM_UP_INDEX');
 export const itemDownIndex=makeAction('ITEM_DOWN_INDEX');
-export const itemEditor=makeAction('ITEM_EDITOR');
-
+export const itemEditor=({ dispatch, state },...args)=>{
+    dispatch('ITEM_EDITOR',...args);
+    if(state.add.page.hasEditorItem()){
+        dispatch('STATE_CHANGE_ATTR');
+    }else{
+        dispatch('STATE_CHANGE_INIT');
+    }
+};
 //MULT
 
 export const multChange=makeAction('MULT_CHANGE');

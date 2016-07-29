@@ -1,0 +1,40 @@
+.button-group{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  >.group-item{
+    background-color: #fff;
+    display: inline-block;
+    font-weight: 500;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    line-height: 1.5;
+    padding: 4px 15px;
+    font-size: 12px;
+    border-radius: 6px;
+    &:first-child:not(:last-child){
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      padding-right: 8px;
+    }
+    &:last-child:not(:first-child){
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      padding-left: 8px;
+    }
+    &:not(:first-child):not(:last-child){
+      border-radius: 0;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    &.on{
+      color: #fff;
+      background-color: #21c2c0;
+      border-color: #21c2c0;
+    }
+  }
+}

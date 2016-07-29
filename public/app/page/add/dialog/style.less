@@ -126,4 +126,60 @@
       }
     }
   }
+  &.animation-list{
+    li{
+      &.back{
+        &:before{
+          content: '\e60f';
+        }
+        &:after{
+          content: '返回';
+        }
+      }
+      &.add{
+        &:before{
+          content: '\e610';
+        }
+        &:after{
+          content: '添加';
+        }
+      }
+      &.del{
+        &:before{
+          content: '\e608';
+        }
+        &:after{
+          content: '删除';
+        }
+      }
+    }
+  }
+  &.animation-add{
+    li{
+      &.back{
+        &:before{
+          content: '\e60f';
+        }
+        &:after{
+          content: '返回';
+        }
+      }
+      &.confirm{
+        &:before{
+          content: '\e612';
+        }
+        &:after{
+          content: '确定';
+        }
+      }
+      &.preview{
+        &:before{
+          content: '\e611';
+        }
+        &:after{
+          content: '预览';
+        }
+      }
+    }
+  }
 }

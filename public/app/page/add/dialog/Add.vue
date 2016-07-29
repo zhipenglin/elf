@@ -1,5 +1,5 @@
 <template>
-    <div class="outer-dialog add" v-if="add.stateType=='add'">
+    <div class="outer-dialog add">
         <ul>
             <li class="pic iconfont"><input type="file" @change="selected"/></li>
             <li class="text iconfont"></li>

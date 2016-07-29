@@ -1,6 +1,8 @@
 /**
  * Created by ifchangetoclzp on 2016/7/20.
  */
+import Animation from './Animation'
+
 var getUUID=(function(){
     var index=0;
     return function(){
@@ -16,13 +18,32 @@ export default class Item{
         this.x=x||(document.documentElement.clientWidth)/2;
         this.y=y||(document.documentElement.clientHeight)/2;
         this.editor=false;
-        this.animations=[];
-        this.event={
+        this.animations=new Animation();
+        var event={
             isMove:undefined,
             start:{
+                sx:0,
+                sy:0,
                 x:0,
                 y:0
             }
+        };
+        this.setIsMove=(value)=>{
+            event.IsMove=value;
+        };
+        this.getIsMove=()=>{
+            return event.IsMove
+        };
+        this.setStart=({sx,sy,x,y})=>{
+            event.start={
+                sx,
+                sy,
+                x:x,
+                y:y
+            }
+        };
+        this.getStart=()=>{
+            return event.start;
         };
     }
     switchEditor(){
@@ -31,23 +52,24 @@ export default class Item{
     touchStart(e){
         e.preventDefault();
         if(e.touches.length==1){
-            this.event.isMove=true;
+            this.setIsMove(true);
         }else{
-            this.event.isMove=false;
+            this.setIsMove(false);
         }
-        this.event.start={
+        this.setStart({
             sx:this.x,
             sy:this.y,
             x:e.touches[0].clientX,
             y:e.touches[0].clientY,
-        };
+        });
     }
     touchMove(e){
         e.preventDefault();
-        if(this.event.isMove===true){
-            this.x=e.touches[0].clientX-this.event.start.x+this.event.start.sx;
-            this.y=e.touches[0].clientY-this.event.start.y+this.event.start.sy;
-        }else if(this.event.isMove===false){
+        if(this.getIsMove()===true){
+            var start=this.getStart();
+            this.x=e.touches[0].clientX-start.x+start.sx;
+            this.y=e.touches[0].clientY-start.y+start.sy;
+        }else if(this.getIsMove()===false){
 
         }
     }
@@ -56,7 +78,7 @@ export default class Item{
     copy(){
         return new Item({type:this.type,data:this.data,x:this.x,y:this.y});
     }
-    addAnimation(){
-        
+    addAnimation(animItem){
+        this.animations.add(animItem);
     }
 }

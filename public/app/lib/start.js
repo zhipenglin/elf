@@ -3,7 +3,6 @@
  */
 import Vue from 'vue'
 import Router from 'vue-router'
-import Vuex from 'vuex'
 
 import plugin from './plugin'
 import routerConfig from '../router'
