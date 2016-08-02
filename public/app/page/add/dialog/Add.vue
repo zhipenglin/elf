@@ -4,7 +4,7 @@
             <li class="pic iconfont"><input type="file" @change="selected"/></li>
             <li class="text iconfont"></li>
             <li class="page iconfont"></li>
-            <li class="mult iconfont" :class="{'close':!add.setting.multSelect}" @click="multChange"></li>
+            <!--<li class="mult iconfont" :class="{'close':!add.setting.multSelect}" @click="multChange"></li>-->
         </ul>
     </div>
 </template>

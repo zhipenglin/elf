@@ -1,16 +1,15 @@
-webpackJsonp([2],{
-
-/***/ 58:
+webpackJsonp([2],Array(57).concat([
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(59)
-	__vue_script__ = __webpack_require__(62)
+	__webpack_require__(58)
+	__vue_script__ = __webpack_require__(61)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] public\\app\\page\\add\\index.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(186)
+	__vue_template__ = __webpack_require__(188)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -29,17 +28,16 @@ webpackJsonp([2],{
 	})()}
 
 /***/ },
-
-/***/ 59:
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(60);
+	var content = __webpack_require__(59);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(61)(content, {});
+	var update = __webpack_require__(60)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -56,8 +54,7 @@ webpackJsonp([2],{
 	}
 
 /***/ },
-
-/***/ 60:
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(5)();
@@ -71,8 +68,8 @@ webpackJsonp([2],{
 
 
 /***/ },
-
-/***/ 62:
+/* 60 */,
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -81,13 +78,13 @@ webpackJsonp([2],{
 	    value: true
 	});
 	
-	var _add = __webpack_require__(63);
+	var _add = __webpack_require__(62);
 	
-	var _dialog = __webpack_require__(65);
+	var _dialog = __webpack_require__(64);
 	
 	var _dialog2 = _interopRequireDefault(_dialog);
 	
-	var _win = __webpack_require__(165);
+	var _win = __webpack_require__(164);
 	
 	var _win2 = _interopRequireDefault(_win);
 	
@@ -149,8 +146,7 @@ webpackJsonp([2],{
 	// <script type="text/ecmascript-6">
 
 /***/ },
-
-/***/ 63:
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -158,9 +154,9 @@ webpackJsonp([2],{
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.multChange = exports.itemEditor = exports.itemDownIndex = exports.itemUpIndex = exports.itemDel = exports.itemCopy = exports.itemAdd = exports.stateChangeInit = exports.stateChangeAnimAdd = exports.stateChangeAnimList = exports.stateChangeAttr = exports.stateChangeAdd = undefined;
+	exports.multChange = exports.animationAdd = exports.animationChange = exports.itemEditor = exports.itemDownIndex = exports.itemUpIndex = exports.itemDel = exports.itemCopy = exports.itemAdd = exports.stateChangeInit = exports.stateChangeAnimAdd = exports.stateChangeAnimList = exports.stateChangeAttr = exports.stateChangeAdd = undefined;
 	
-	var _makeAction = __webpack_require__(64);
+	var _makeAction = __webpack_require__(63);
 	
 	var _makeAction2 = _interopRequireDefault(_makeAction);
 	
@@ -198,6 +194,7 @@ webpackJsonp([2],{
 	    var dispatch = _ref2.dispatch;
 	    var state = _ref2.state;
 	
+	
 	    dispatch.apply(undefined, ['ITEM_EDITOR'].concat(args));
 	    if (state.add.page.hasEditorItem()) {
 	        dispatch('STATE_CHANGE_ATTR');
@@ -205,13 +202,23 @@ webpackJsonp([2],{
 	        dispatch('STATE_CHANGE_INIT');
 	    }
 	};
+	
+	//ANIMATION
+	var animationChange = exports.animationChange = (0, _makeAction2.default)('ANIMATION_CHANGE');
+	var animationAdd = exports.animationAdd = function animationAdd(_ref3) {
+	    var dispatch = _ref3.dispatch;
+	    var state = _ref3.state;
+	
+	    dispatch('ANIMATION_ADD');
+	    dispatch('STATE_CHANGE_ANIM_LIST');
+	};
+	
 	//MULT
 	
 	var multChange = exports.multChange = (0, _makeAction2.default)('MULT_CHANGE');
 
 /***/ },
-
-/***/ 64:
+/* 63 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -232,18 +239,17 @@ webpackJsonp([2],{
 	};
 
 /***/ },
-
-/***/ 65:
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(66)
-	__vue_script__ = __webpack_require__(68)
+	__webpack_require__(65)
+	__vue_script__ = __webpack_require__(67)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] public\\app\\page\\add\\dialog\\index.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(164)
+	__vue_template__ = __webpack_require__(163)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -262,17 +268,16 @@ webpackJsonp([2],{
 	})()}
 
 /***/ },
-
-/***/ 66:
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(67);
+	var content = __webpack_require__(66);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(61)(content, {});
+	var update = __webpack_require__(60)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -289,8 +294,7 @@ webpackJsonp([2],{
 	}
 
 /***/ },
-
-/***/ 67:
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(5)();
@@ -304,8 +308,7 @@ webpackJsonp([2],{
 
 
 /***/ },
-
-/***/ 68:
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -314,19 +317,19 @@ webpackJsonp([2],{
 	    value: true
 	});
 	
-	var _Add = __webpack_require__(69);
+	var _Add = __webpack_require__(68);
 	
 	var _Add2 = _interopRequireDefault(_Add);
 	
-	var _Attribute = __webpack_require__(155);
+	var _Attribute = __webpack_require__(154);
 	
 	var _Attribute2 = _interopRequireDefault(_Attribute);
 	
-	var _AnimationList = __webpack_require__(158);
+	var _AnimationList = __webpack_require__(157);
 	
 	var _AnimationList2 = _interopRequireDefault(_AnimationList);
 	
-	var _AddAnimation = __webpack_require__(161);
+	var _AddAnimation = __webpack_require__(160);
 	
 	var _AddAnimation2 = _interopRequireDefault(_AddAnimation);
 	
@@ -364,17 +367,16 @@ webpackJsonp([2],{
 	/* generated by vue-loader */
 
 /***/ },
-
-/***/ 69:
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(70)
+	__vue_script__ = __webpack_require__(69)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] public\\app\\page\\add\\dialog\\Add.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(154)
+	__vue_template__ = __webpack_require__(153)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -393,8 +395,7 @@ webpackJsonp([2],{
 	})()}
 
 /***/ },
-
-/***/ 70:
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -403,11 +404,11 @@ webpackJsonp([2],{
 	    value: true
 	});
 	
-	var _upload = __webpack_require__(71);
+	var _upload = __webpack_require__(70);
 	
 	var _upload2 = _interopRequireDefault(_upload);
 	
-	var _add = __webpack_require__(63);
+	var _add = __webpack_require__(62);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -417,7 +418,7 @@ webpackJsonp([2],{
 	//             <li class="pic iconfont"><input type="file" @change="selected"/></li>
 	//             <li class="text iconfont"></li>
 	//             <li class="page iconfont"></li>
-	//             <li class="mult iconfont" :class="{'close':!add.setting.multSelect}" @click="multChange"></li>
+	//             <!--<li class="mult iconfont" :class="{'close':!add.setting.multSelect}" @click="multChange"></li>-->
 	//         </ul>
 	//     </div>
 	// </template>
@@ -453,8 +454,7 @@ webpackJsonp([2],{
 	/* generated by vue-loader */
 
 /***/ },
-
-/***/ 71:
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -463,27 +463,27 @@ webpackJsonp([2],{
 	  value: true
 	});
 	
-	var _regenerator = __webpack_require__(72);
+	var _regenerator = __webpack_require__(71);
 	
 	var _regenerator2 = _interopRequireDefault(_regenerator);
 	
-	var _promise = __webpack_require__(75);
+	var _promise = __webpack_require__(74);
 	
 	var _promise2 = _interopRequireDefault(_promise);
 	
-	var _asyncToGenerator2 = __webpack_require__(109);
+	var _asyncToGenerator2 = __webpack_require__(108);
 	
 	var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 	
-	var _exif = __webpack_require__(110);
+	var _exif = __webpack_require__(109);
 	
 	var _exif2 = _interopRequireDefault(_exif);
 	
-	var _zip = __webpack_require__(128);
+	var _zip = __webpack_require__(127);
 	
 	var _zip2 = _interopRequireDefault(_zip);
 	
-	var _fetch = __webpack_require__(129);
+	var _fetch = __webpack_require__(128);
 	
 	var _fetch2 = _interopRequireDefault(_fetch);
 	
@@ -561,13 +561,50 @@ webpackJsonp([2],{
 	}();
 
 /***/ },
-
-/***/ 110:
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */,
+/* 99 */,
+/* 100 */,
+/* 101 */,
+/* 102 */,
+/* 103 */,
+/* 104 */,
+/* 105 */,
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
 	
-	var _typeof2 = __webpack_require__(111);
+	var _typeof2 = __webpack_require__(110);
 	
 	var _typeof3 = _interopRequireDefault(_typeof2);
 	
@@ -1364,8 +1401,24 @@ webpackJsonp([2],{
 	}).call(undefined);
 
 /***/ },
-
-/***/ 128:
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1374,11 +1427,11 @@ webpackJsonp([2],{
 	    value: true
 	});
 	
-	var _regenerator = __webpack_require__(72);
+	var _regenerator = __webpack_require__(71);
 	
 	var _regenerator2 = _interopRequireDefault(_regenerator);
 	
-	var _promise = __webpack_require__(75);
+	var _promise = __webpack_require__(74);
 	
 	var _promise2 = _interopRequireDefault(_promise);
 	
@@ -1386,7 +1439,7 @@ webpackJsonp([2],{
 	
 	var _assign2 = _interopRequireDefault(_assign);
 	
-	var _asyncToGenerator2 = __webpack_require__(109);
+	var _asyncToGenerator2 = __webpack_require__(108);
 	
 	var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 	
@@ -1485,24 +1538,47 @@ webpackJsonp([2],{
 	}();
 
 /***/ },
-
-/***/ 154:
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"outer-dialog add\">\n    <ul>\n        <li class=\"pic iconfont\"><input type=\"file\" @change=\"selected\"/></li>\n        <li class=\"text iconfont\"></li>\n        <li class=\"page iconfont\"></li>\n        <li class=\"mult iconfont\" :class=\"{'close':!add.setting.multSelect}\" @click=\"multChange\"></li>\n    </ul>\n</div>\n";
+	module.exports = "\n<div class=\"outer-dialog add\">\n    <ul>\n        <li class=\"pic iconfont\"><input type=\"file\" @change=\"selected\"/></li>\n        <li class=\"text iconfont\"></li>\n        <li class=\"page iconfont\"></li>\n        <!--<li class=\"mult iconfont\" :class=\"{'close':!add.setting.multSelect}\" @click=\"multChange\"></li>-->\n    </ul>\n</div>\n";
 
 /***/ },
-
-/***/ 155:
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(156)
+	__vue_script__ = __webpack_require__(155)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] public\\app\\page\\add\\dialog\\Attribute.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(157)
+	__vue_template__ = __webpack_require__(156)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1521,8 +1597,7 @@ webpackJsonp([2],{
 	})()}
 
 /***/ },
-
-/***/ 156:
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1531,7 +1606,7 @@ webpackJsonp([2],{
 	    value: true
 	});
 	
-	var _add = __webpack_require__(63);
+	var _add = __webpack_require__(62);
 	
 	exports.default = {
 	    vuex: {
@@ -1578,24 +1653,22 @@ webpackJsonp([2],{
 	// <script type="text/ecmascript-6">
 
 /***/ },
-
-/***/ 157:
+/* 156 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"outer-dialog attribute\">\n    <ul>\n        <li class=\"copy iconfont\" @click=\"copy\"></li>\n        <li class=\"del iconfont\" @click=\"del\"></li>\n        <li class=\"up-index iconfont\" @click=\"upIndex\"></li>\n        <li class=\"down-index iconfont\" @click=\"downIndex\"></li>\n        <li class=\"animation iconfont\" @click=\"animation\"></li>\n    </ul>\n</div>\n";
 
 /***/ },
-
-/***/ 158:
+/* 157 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(159)
+	__vue_script__ = __webpack_require__(158)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] public\\app\\page\\add\\dialog\\AnimationList.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(160)
+	__vue_template__ = __webpack_require__(159)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1614,8 +1687,7 @@ webpackJsonp([2],{
 	})()}
 
 /***/ },
-
-/***/ 159:
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1624,7 +1696,7 @@ webpackJsonp([2],{
 	    value: true
 	});
 	
-	var _add = __webpack_require__(63);
+	var _add = __webpack_require__(62);
 	
 	exports.default = {
 	    vuex: {
@@ -1660,24 +1732,22 @@ webpackJsonp([2],{
 	// <script type="text/ecmascript-6">
 
 /***/ },
-
-/***/ 160:
+/* 159 */
 /***/ function(module, exports) {
 
 	module.exports = "\n<div class=\"outer-dialog animation-list\">\n    <ul>\n        <li class=\"back iconfont\" @click=\"back\"></li>\n        <li class=\"add iconfont\" @click=\"addAnimation\"></li>\n        <li class=\"del iconfont\"></li>\n    </ul>\n</div>\n";
 
 /***/ },
-
-/***/ 161:
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(162)
+	__vue_script__ = __webpack_require__(161)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] public\\app\\page\\add\\dialog\\AddAnimation.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(163)
+	__vue_template__ = __webpack_require__(162)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1696,8 +1766,7 @@ webpackJsonp([2],{
 	})()}
 
 /***/ },
-
-/***/ 162:
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1706,17 +1775,20 @@ webpackJsonp([2],{
 	    value: true
 	});
 	
-	var _add = __webpack_require__(63);
+	var _add = __webpack_require__(62);
 	
 	exports.default = {
 	    vuex: {
 	        actions: {
-	            stateChangeAnimList: _add.stateChangeAnimList
+	            stateChangeAnimList: _add.stateChangeAnimList, animationAdd: _add.animationAdd
 	        }
 	    },
 	    methods: {
 	        back: function back() {
 	            this.stateChangeAnimList();
+	        },
+	        confirm: function confirm() {
+	            this.animationAdd();
 	        }
 	    }
 	};
@@ -1726,7 +1798,7 @@ webpackJsonp([2],{
 	//     <div class="outer-dialog animation-add">
 	//         <ul>
 	//             <li class="back iconfont" @click="back"></li>
-	//             <li class="confirm iconfont"></li>
+	//             <li class="confirm iconfont" @click="confirm"></li>
 	//             <li class="preview iconfont"></li>
 	//         </ul>
 	//     </div>
@@ -1734,32 +1806,29 @@ webpackJsonp([2],{
 	// <script type="text/ecmascript-6">
 
 /***/ },
-
-/***/ 163:
+/* 162 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"outer-dialog animation-add\">\n    <ul>\n        <li class=\"back iconfont\" @click=\"back\"></li>\n        <li class=\"confirm iconfont\"></li>\n        <li class=\"preview iconfont\"></li>\n    </ul>\n</div>\n";
+	module.exports = "\n<div class=\"outer-dialog animation-add\">\n    <ul>\n        <li class=\"back iconfont\" @click=\"back\"></li>\n        <li class=\"confirm iconfont\" @click=\"confirm\"></li>\n        <li class=\"preview iconfont\"></li>\n    </ul>\n</div>\n";
 
 /***/ },
-
-/***/ 164:
+/* 163 */
 /***/ function(module, exports) {
 
 	module.exports = "\n\n<component :is=\"componentName\"></component>\n";
 
 /***/ },
-
-/***/ 165:
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(166)
-	__vue_script__ = __webpack_require__(168)
+	__webpack_require__(165)
+	__vue_script__ = __webpack_require__(167)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] public\\app\\page\\add\\win\\index.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(185)
+	__vue_template__ = __webpack_require__(187)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1778,17 +1847,16 @@ webpackJsonp([2],{
 	})()}
 
 /***/ },
-
-/***/ 166:
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(167);
+	var content = __webpack_require__(166);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(61)(content, {});
+	var update = __webpack_require__(60)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1805,8 +1873,7 @@ webpackJsonp([2],{
 	}
 
 /***/ },
-
-/***/ 167:
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(5)();
@@ -1814,14 +1881,13 @@ webpackJsonp([2],{
 	
 	
 	// module
-	exports.push([module.id, ".window-outer {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  background-color: rgba(247, 247, 248, 0.85);\n  border-radius: 8px;\n  padding: 8px;\n}\n.window-outer.animation-list {\n  width: 300px;\n  height: 300px;\n}\n.window-outer.animation-list svg {\n  width: 100%;\n  height: 100%;\n}\n.window-outer.animation-list svg .axes {\n  stroke: #000;\n  stroke-width: 0.4;\n}\n.window-outer.animation-list svg .refer {\n  stroke: #ccc;\n  stroke-width: 0.2;\n}\n.window-outer.animation-list svg .referLabel {\n  font-size: 8px;\n  -webkit-transform: translate(-8px, 10px);\n          transform: translate(-8px, 10px);\n}\n.window-outer.add-animation {\n  overflow: auto;\n  font-size: 12px;\n  width: 80%;\n  height: 50%;\n}\n.window-outer.add-animation .group {\n  text-align: center;\n  margin-bottom: 5px;\n}\n.window-outer.add-animation .group.title {\n  margin-bottom: 15px;\n}\n.window-outer.add-animation .group .label {\n  text-align: left;\n}\n", "", {"version":3,"sources":["/./public/app/page/add/win/style.less"],"names":[],"mappings":"AAAA;EACE,gBAAgB;EAChB,SAAS;EACT,UAAU;EACV,yCAAiC;UAAjC,iCAAiC;EACjC,4CAA4C;EAC5C,mBAAmB;EACnB,aAAa;CACd;AACD;EACE,aAAa;EACb,cAAc;CACf;AACD;EACE,YAAY;EACZ,aAAa;CACd;AACD;EACE,aAAa;EACb,kBAAkB;CACnB;AACD;EACE,aAAa;EACb,kBAAkB;CACnB;AACD;EACE,eAAe;EACf,yCAAiC;UAAjC,iCAAiC;CAClC;AACD;EACE,eAAe;EACf,gBAAgB;EAChB,WAAW;EACX,YAAY;CACb;AACD;EACE,mBAAmB;EACnB,mBAAmB;CACpB;AACD;EACE,oBAAoB;CACrB;AACD;EACE,iBAAiB;CAClB","file":"style.less","sourcesContent":[".window-outer {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background-color: rgba(247, 247, 248, 0.85);\n  border-radius: 8px;\n  padding: 8px;\n}\n.window-outer.animation-list {\n  width: 300px;\n  height: 300px;\n}\n.window-outer.animation-list svg {\n  width: 100%;\n  height: 100%;\n}\n.window-outer.animation-list svg .axes {\n  stroke: #000;\n  stroke-width: 0.4;\n}\n.window-outer.animation-list svg .refer {\n  stroke: #ccc;\n  stroke-width: 0.2;\n}\n.window-outer.animation-list svg .referLabel {\n  font-size: 8px;\n  transform: translate(-8px, 10px);\n}\n.window-outer.add-animation {\n  overflow: auto;\n  font-size: 12px;\n  width: 80%;\n  height: 50%;\n}\n.window-outer.add-animation .group {\n  text-align: center;\n  margin-bottom: 5px;\n}\n.window-outer.add-animation .group.title {\n  margin-bottom: 15px;\n}\n.window-outer.add-animation .group .label {\n  text-align: left;\n}\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".window-outer {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n  background-color: rgba(247, 247, 248, 0.85);\n  border-radius: 8px;\n  padding: 8px;\n}\n.window-outer.animation-list svg {\n  width: 300px;\n  height: 300px;\n}\n.window-outer.animation-list svg .axes {\n  stroke: #000;\n  stroke-width: 0.4;\n}\n.window-outer.animation-list svg .refer {\n  stroke: #ccc;\n  stroke-width: 0.2;\n}\n.window-outer.animation-list svg .referLabel {\n  font-size: 8px;\n  -webkit-transform: translate(-8px, 10px);\n          transform: translate(-8px, 10px);\n}\n.window-outer.add-animation {\n  overflow: auto;\n  font-size: 12px;\n  width: 80%;\n  height: 50%;\n}\n.window-outer.add-animation .group {\n  text-align: center;\n  margin-bottom: 5px;\n}\n.window-outer.add-animation .group.title {\n  margin-bottom: 15px;\n}\n.window-outer.add-animation .group .label {\n  text-align: left;\n}\n", "", {"version":3,"sources":["/./public/app/page/add/win/style.less"],"names":[],"mappings":"AAAA;EACE,gBAAgB;EAChB,SAAS;EACT,UAAU;EACV,yCAAiC;UAAjC,iCAAiC;EACjC,4CAA4C;EAC5C,mBAAmB;EACnB,aAAa;CACd;AACD;EACE,aAAa;EACb,cAAc;CACf;AACD;EACE,aAAa;EACb,kBAAkB;CACnB;AACD;EACE,aAAa;EACb,kBAAkB;CACnB;AACD;EACE,eAAe;EACf,yCAAiC;UAAjC,iCAAiC;CAClC;AACD;EACE,eAAe;EACf,gBAAgB;EAChB,WAAW;EACX,YAAY;CACb;AACD;EACE,mBAAmB;EACnB,mBAAmB;CACpB;AACD;EACE,oBAAoB;CACrB;AACD;EACE,iBAAiB;CAClB","file":"style.less","sourcesContent":[".window-outer {\n  position: fixed;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  background-color: rgba(247, 247, 248, 0.85);\n  border-radius: 8px;\n  padding: 8px;\n}\n.window-outer.animation-list svg {\n  width: 300px;\n  height: 300px;\n}\n.window-outer.animation-list svg .axes {\n  stroke: #000;\n  stroke-width: 0.4;\n}\n.window-outer.animation-list svg .refer {\n  stroke: #ccc;\n  stroke-width: 0.2;\n}\n.window-outer.animation-list svg .referLabel {\n  font-size: 8px;\n  transform: translate(-8px, 10px);\n}\n.window-outer.add-animation {\n  overflow: auto;\n  font-size: 12px;\n  width: 80%;\n  height: 50%;\n}\n.window-outer.add-animation .group {\n  text-align: center;\n  margin-bottom: 5px;\n}\n.window-outer.add-animation .group.title {\n  margin-bottom: 15px;\n}\n.window-outer.add-animation .group .label {\n  text-align: left;\n}\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ },
-
-/***/ 168:
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1830,11 +1896,11 @@ webpackJsonp([2],{
 	    value: true
 	});
 	
-	var _AnimationList = __webpack_require__(169);
+	var _AnimationList = __webpack_require__(168);
 	
 	var _AnimationList2 = _interopRequireDefault(_AnimationList);
 	
-	var _AddAnimation = __webpack_require__(172);
+	var _AddAnimation = __webpack_require__(174);
 	
 	var _AddAnimation2 = _interopRequireDefault(_AddAnimation);
 	
@@ -1870,17 +1936,16 @@ webpackJsonp([2],{
 	/* generated by vue-loader */
 
 /***/ },
-
-/***/ 169:
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(170)
+	__vue_script__ = __webpack_require__(169)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] public\\app\\page\\add\\win\\AnimationList.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(171)
+	__vue_template__ = __webpack_require__(173)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -1899,8 +1964,7 @@ webpackJsonp([2],{
 	})()}
 
 /***/ },
-
-/***/ 170:
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1909,7 +1973,7 @@ webpackJsonp([2],{
 	    value: true
 	});
 	
-	var _TimeLine = __webpack_require__(222);
+	var _TimeLine = __webpack_require__(170);
 	
 	var _TimeLine2 = _interopRequireDefault(_TimeLine);
 	
@@ -1951,7 +2015,7 @@ webpackJsonp([2],{
 	// </script>
 	/* generated by vue-loader */
 	// <template>
-	//     <div class="window-outer animation-list">
+	//     <div class="window-outer animation-list" @touchstart.prevent="">
 	//         <svg viewBox="-1 810 200 200">
 	//             <g :style="{transform:`translateX(${(1+n)*30}px)`}" v-for="n in 34">
 	//                 <line x1="0" y1="0" x2="0" y2="1000" class="refer"/>
@@ -1974,24 +2038,120 @@ webpackJsonp([2],{
 	// <script type="text/ecmascript-6">
 
 /***/ },
-
-/***/ 171:
-/***/ function(module, exports) {
-
-	module.exports = "\n<div class=\"window-outer animation-list\">\n    <svg viewBox=\"-1 810 200 200\">\n        <g :style=\"{transform:`translateX(${(1+n)*30}px)`}\" v-for=\"n in 34\">\n            <line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1000\" class=\"refer\"/>\n            <text x=\"0\" y=\"1000\" class=\"referLabel\">{{(1+n)*60|timeFormat}}</text>\n        </g>\n        <g :style=\"{transform:`translateY(-${(1+n)*20}px)`}\" v-for=\"n in 49\">\n            <line x1=\"0\" y1=\"1000\" x2=\"1000\" y2=\"1000\" class=\"refer\"/>\n        </g>\n        <g class=\"animate-item\" style=\"transform: translateY(1000px)\">\n            <time-line :item=\"item\" v-for=\"item in animation.timeLine\" :style=\"{transform:`translateY(-${($index+1)*20}px)`}\"></time-line>\n        </g>\n        <g>\n            <line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1000\" class=\"axes\"/>\n            <text x=\"0\" y=\"1000\" class=\"referLabel\" style=\"transform: translate(0,10px)\">0ms</text>\n        </g>\n        <line x1=\"0\" y1=\"1000\" x2=\"1000\" y2=\"1000\" class=\"axes\"/>\n    </svg>\n</div>\n";
-
-/***/ },
-
-/***/ 172:
+/* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(173)
+	__vue_script__ = __webpack_require__(171)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] public\\app\\page\\add\\win\\TimeLine.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(172)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-076ca8c4/TimeLine.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 171 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	// <template>
+	//     <g>
+	//         <rect
+	//                 @touchstart.prevent='touchStart($index,$event)'
+	//                 @touchmove='touchMove($index,$event)'
+	//                 @touchend='touchEnd($index,$event)'
+	//                 @touchcancel='touchEnd($index,$event)'
+	//               :x="getX($index)" y="0" :width="getWidth($index)" height="20" ry="10"
+	//                 :style="getStyle($index)" v-for="point in item"></rect>
+	//     </g>
+	// </template>
+	// <script type="text/ecmascript-6">
+	exports.default = {
+	    props: {
+	        item: {
+	            type: Array,
+	            default: function _default() {
+	                return [];
+	            }
+	        }
+	    },
+	    methods: {
+	        getX: function getX(index) {
+	            var x = 0;
+	            for (var start = 0; start < index; start++) {
+	                x += parseInt(this.item[start].delay);
+	                x += parseInt(this.item[start].last);
+	            }
+	            x += parseInt(this.item[index].delay);
+	            return x;
+	        },
+	        getWidth: function getWidth(index) {
+	            return parseInt(this.item[index].last);
+	        },
+	        getStyle: function getStyle(index) {
+	            var colors = ['#66cc99', '#ff99cc', '#99cc33', '#ccccff', '#99ccff'];
+	            return {
+	                fill: colors[this.item[index].type],
+	                transform: 'translate(' + this.item[index].x + 'px,' + this.item[index].y + 'px)'
+	            };
+	        },
+	        touchStart: function touchStart(index, e) {
+	            this.item[index].touchStart(e);
+	        },
+	        touchMove: function touchMove(index, e) {
+	            this.item[index].touchMove(e);
+	        },
+	        touchEnd: function touchEnd(index, e) {
+	            this.item[index].touchEnd(e);
+	        }
+	    }
+	};
+	// </script>
+	/* generated by vue-loader */
+
+/***/ },
+/* 172 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<g>\n    <rect\n            @touchstart.prevent='touchStart($index,$event)'\n            @touchmove='touchMove($index,$event)'\n            @touchend='touchEnd($index,$event)'\n            @touchcancel='touchEnd($index,$event)'\n          :x=\"getX($index)\" y=\"0\" :width=\"getWidth($index)\" height=\"20\" ry=\"10\"\n            :style=\"getStyle($index)\" v-for=\"point in item\"></rect>\n</g>\n";
+
+/***/ },
+/* 173 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div class=\"window-outer animation-list\" @touchstart.prevent=\"\">\n    <svg viewBox=\"-1 810 200 200\">\n        <g :style=\"{transform:`translateX(${(1+n)*30}px)`}\" v-for=\"n in 34\">\n            <line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1000\" class=\"refer\"/>\n            <text x=\"0\" y=\"1000\" class=\"referLabel\">{{(1+n)*60|timeFormat}}</text>\n        </g>\n        <g :style=\"{transform:`translateY(-${(1+n)*20}px)`}\" v-for=\"n in 49\">\n            <line x1=\"0\" y1=\"1000\" x2=\"1000\" y2=\"1000\" class=\"refer\"/>\n        </g>\n        <g class=\"animate-item\" style=\"transform: translateY(1000px)\">\n            <time-line :item=\"item\" v-for=\"item in animation.timeLine\" :style=\"{transform:`translateY(-${($index+1)*20}px)`}\"></time-line>\n        </g>\n        <g>\n            <line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1000\" class=\"axes\"/>\n            <text x=\"0\" y=\"1000\" class=\"referLabel\" style=\"transform: translate(0,10px)\">0ms</text>\n        </g>\n        <line x1=\"0\" y1=\"1000\" x2=\"1000\" y2=\"1000\" class=\"axes\"/>\n    </svg>\n</div>\n";
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(175)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] public\\app\\page\\add\\win\\AddAnimation.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(184)
+	__vue_template__ = __webpack_require__(186)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2010,8 +2170,7 @@ webpackJsonp([2],{
 	})()}
 
 /***/ },
-
-/***/ 173:
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2020,73 +2179,29 @@ webpackJsonp([2],{
 	    value: true
 	});
 	
-	var _buttonGroup = __webpack_require__(174);
+	var _add = __webpack_require__(62);
+	
+	var _buttonGroup = __webpack_require__(176);
 	
 	var _buttonGroup2 = _interopRequireDefault(_buttonGroup);
 	
-	var _slider = __webpack_require__(179);
+	var _slider = __webpack_require__(181);
 	
 	var _slider2 = _interopRequireDefault(_slider);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// <template>
-	//     <div class="window-outer add-animation">
-	//         <div class="group title">
-	//             <button-group :active.sync="animationType" :list="animationTypeList"></button-group>
-	//         </div>
-	//         <div class="group">
-	//             <div class="label">延迟</div>
-	//             <slider :value.sync="data.delay"></slider>
-	//         </div>
-	//         <div class="group">
-	//             <div class="label">时长</div>
-	//             <slider :value.sync="data.last"></slider>
-	//         </div>
-	//         <div class="group">
-	//             <div class="label">重复次数</div>
-	//             <slider :value.sync="data.repeat"></slider>
-	//         </div>
-	//         <div class="option-area" v-if="animationType==0">
-	//             <div class="group">
-	//                 <div class="label">开始值(透明度)</div>
-	//                 <slider></slider>
-	//             </div>
-	//             <div class="group">
-	//                 <div class="label">结束值(透明度)</div>
-	//                 <slider></slider>
-	//             </div>
-	//         </div>
-	//         <div class="option-area" v-if="animationType==1">
-	//             <div class="group">
-	//                 <div class="label">开始值(X轴)</div>
-	//                 <slider></slider>
-	//             </div>
-	//             <div class="group">
-	//                 <div class="label">结束值(X轴)</div>
-	//                 <slider></slider>
-	//             </div>
-	//             <div class="group">
-	//                 <div class="label">开始值(Y轴)</div>
-	//                 <slider></slider>
-	//             </div>
-	//             <div class="group">
-	//                 <div class="label">结束值(Y轴)</div>
-	//                 <slider></slider>
-	//             </div>
-	//             <div class="group">
-	//                 <div class="label">开始值(Z轴)</div>
-	//                 <slider></slider>
-	//             </div>
-	//             <div class="group">
-	//                 <div class="label">结束值(Z轴)</div>
-	//                 <slider></slider>
-	//             </div>
-	//         </div>
-	//     </div>
-	// </template>
-	// <script type="text/ecmascript-6">
 	exports.default = {
+	    vuex: {
+	        actions: {
+	            animationChange: _add.animationChange
+	        },
+	        getters: {
+	            animation: function animation(state) {
+	                return state.add.animation;
+	            }
+	        }
+	    },
 	    typeMap: [{
 	        type: 'opacity',
 	        text: '透明度'
@@ -2118,26 +2233,68 @@ webpackJsonp([2],{
 	        };
 	    },
 	
+	    methods: {
+	        setType: function setType(value) {
+	            this.animationChange({
+	                key: 'type', value: value
+	            });
+	            console.log(this.animation);
+	        },
+	        setDelay: function setDelay(value) {
+	            this.animationChange({
+	                key: 'delay', value: value
+	            });
+	        },
+	        setLast: function setLast(value) {
+	            this.animationChange({
+	                key: 'last', value: value
+	            });
+	        },
+	        setRepeat: function setRepeat(value) {
+	            this.animationChange({
+	                key: 'repeat', value: value
+	            });
+	        }
+	    },
 	    components: {
 	        slider: _slider2.default, ButtonGroup: _buttonGroup2.default
 	    }
 	};
 	// </script>
 	/* generated by vue-loader */
+	// <template>
+	//     <div class="window-outer add-animation">
+	//         <div class="group title">
+	//             <button-group :active="animation.type" :list="animationTypeList" v-on:value="setType"></button-group>
+	//         </div>
+	//         <div class="group">
+	//             <div class="label">延迟</div>
+	//             <slider :value="animation.delay" v-on:value="setDelay"></slider>
+	//         </div>
+	//         <div class="group">
+	//             <div class="label">时长</div>
+	//             <slider :value="animation.last" v-on:value="setLast"></slider>
+	//         </div>
+	//         <div class="group">
+	//             <div class="label">重复次数</div>
+	//             <slider :value="animation.repeat" v-on:value="setRepeat"></slider>
+	//         </div>
+	//     </div>
+	// </template>
+	// <script type="text/ecmascript-6">
 
 /***/ },
-
-/***/ 174:
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(175)
-	__vue_script__ = __webpack_require__(177)
+	__webpack_require__(177)
+	__vue_script__ = __webpack_require__(179)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] public\\app\\modules\\buttonGroup\\index.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(178)
+	__vue_template__ = __webpack_require__(180)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2156,17 +2313,16 @@ webpackJsonp([2],{
 	})()}
 
 /***/ },
-
-/***/ 175:
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(176);
+	var content = __webpack_require__(178);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(61)(content, {});
+	var update = __webpack_require__(60)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -2183,8 +2339,7 @@ webpackJsonp([2],{
 	}
 
 /***/ },
-
-/***/ 176:
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(5)();
@@ -2198,11 +2353,10 @@ webpackJsonp([2],{
 
 
 /***/ },
-
-/***/ 177:
+/* 179 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -2210,7 +2364,7 @@ webpackJsonp([2],{
 	// <style lang="less" src="./style.less"></style>
 	// <template>
 	//     <div class="button-group">
-	//         <a class="group-item" v-for="item in list" :class="{'on':active==$index}" @click="change($index)">{{item}}</a>
+	//         <a class="group-item" v-for="item in list" :class="{'on':active==$index}" @click="setValue($index)">{{item}}</a>
 	//     </div>
 	// </template>
 	// <script type="text/ecmascript-6">
@@ -2218,7 +2372,6 @@ webpackJsonp([2],{
 	    props: {
 	        active: {
 	            type: Number,
-	            twoWay: true,
 	            default: 0
 	        },
 	        list: {
@@ -2229,8 +2382,9 @@ webpackJsonp([2],{
 	        }
 	    },
 	    methods: {
-	        change: function change(index) {
+	        setValue: function setValue(index) {
 	            this.active = index;
+	            this.$dispatch('value', index);
 	        }
 	    }
 	};
@@ -2238,25 +2392,23 @@ webpackJsonp([2],{
 	/* generated by vue-loader */
 
 /***/ },
-
-/***/ 178:
+/* 180 */
 /***/ function(module, exports) {
 
-	module.exports = "\n\n<div class=\"button-group\">\n    <a class=\"group-item\" v-for=\"item in list\" :class=\"{'on':active==$index}\" @click=\"change($index)\">{{item}}</a>\n</div>\n";
+	module.exports = "\n\n<div class=\"button-group\">\n    <a class=\"group-item\" v-for=\"item in list\" :class=\"{'on':active==$index}\" @click=\"setValue($index)\">{{item}}</a>\n</div>\n";
 
 /***/ },
-
-/***/ 179:
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(180)
-	__vue_script__ = __webpack_require__(182)
+	__webpack_require__(182)
+	__vue_script__ = __webpack_require__(184)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] public\\app\\modules\\slider\\index.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(183)
+	__vue_template__ = __webpack_require__(185)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	if (__vue_template__) {
@@ -2275,17 +2427,16 @@ webpackJsonp([2],{
 	})()}
 
 /***/ },
-
-/***/ 180:
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(181);
+	var content = __webpack_require__(183);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(61)(content, {});
+	var update = __webpack_require__(60)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -2302,8 +2453,7 @@ webpackJsonp([2],{
 	}
 
 /***/ },
-
-/***/ 181:
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(5)();
@@ -2317,11 +2467,10 @@ webpackJsonp([2],{
 
 
 /***/ },
-
-/***/ 182:
+/* 184 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -2340,7 +2489,6 @@ webpackJsonp([2],{
 	    props: {
 	        value: {
 	            type: Number,
-	            twoWay: true,
 	            default: 0
 	        }
 	    },
@@ -2365,13 +2513,17 @@ webpackJsonp([2],{
 	            } else if (offset > 100) {
 	                offset = 100;
 	            }
-	            this.value = offset;
+	            this.setValue(offset);
 	        },
 	        cancel: function cancel() {
 	            this.active = false;
 	        },
 	        clickHandler: function clickHandler(e) {
-	            this.value = 100 * e.offsetX / this.$el.offsetWidth;
+	            this.setValue(100 * e.offsetX / this.$el.offsetWidth);
+	        },
+	        setValue: function setValue(value) {
+	            this.value = value;
+	            this.$dispatch('value', value);
 	        }
 	    }
 	};
@@ -2379,106 +2531,29 @@ webpackJsonp([2],{
 	/* generated by vue-loader */
 
 /***/ },
-
-/***/ 183:
+/* 185 */
 /***/ function(module, exports) {
 
 	module.exports = "\n\n<div class=\"slider\" @click=\"clickHandler\">\n    <div class=\"slider-background\"></div>\n    <div class=\"slider-line\" :style=\"{'width':value+'%'}\" :class=\"{'on':active}\"></div>\n    <div class=\"slider-item\" :style=\"{'left':value+'%'}\" :class=\"{'on':active}\"></div>\n    <div class=\"slider-event\" :style=\"{'left':value+'%'}\" @touchstart.prevent=\"touchStart\" @touchmove.prevent=\"touchMove\" @touchcancel=\"cancel\" @touchend=\"cancel\" @click.stop=\"\"></div>\n</div>\n";
 
 /***/ },
-
-/***/ 184:
+/* 186 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div class=\"window-outer add-animation\">\n    <div class=\"group title\">\n        <button-group :active.sync=\"animationType\" :list=\"animationTypeList\"></button-group>\n    </div>\n    <div class=\"group\">\n        <div class=\"label\">延迟</div>\n        <slider :value.sync=\"data.delay\"></slider>\n    </div>\n    <div class=\"group\">\n        <div class=\"label\">时长</div>\n        <slider :value.sync=\"data.last\"></slider>\n    </div>\n    <div class=\"group\">\n        <div class=\"label\">重复次数</div>\n        <slider :value.sync=\"data.repeat\"></slider>\n    </div>\n    <div class=\"option-area\" v-if=\"animationType==0\">\n        <div class=\"group\">\n            <div class=\"label\">开始值(透明度)</div>\n            <slider></slider>\n        </div>\n        <div class=\"group\">\n            <div class=\"label\">结束值(透明度)</div>\n            <slider></slider>\n        </div>\n    </div>\n    <div class=\"option-area\" v-if=\"animationType==1\">\n        <div class=\"group\">\n            <div class=\"label\">开始值(X轴)</div>\n            <slider></slider>\n        </div>\n        <div class=\"group\">\n            <div class=\"label\">结束值(X轴)</div>\n            <slider></slider>\n        </div>\n        <div class=\"group\">\n            <div class=\"label\">开始值(Y轴)</div>\n            <slider></slider>\n        </div>\n        <div class=\"group\">\n            <div class=\"label\">结束值(Y轴)</div>\n            <slider></slider>\n        </div>\n        <div class=\"group\">\n            <div class=\"label\">开始值(Z轴)</div>\n            <slider></slider>\n        </div>\n        <div class=\"group\">\n            <div class=\"label\">结束值(Z轴)</div>\n            <slider></slider>\n        </div>\n    </div>\n</div>\n";
+	module.exports = "\n<div class=\"window-outer add-animation\">\n    <div class=\"group title\">\n        <button-group :active=\"animation.type\" :list=\"animationTypeList\" v-on:value=\"setType\"></button-group>\n    </div>\n    <div class=\"group\">\n        <div class=\"label\">延迟</div>\n        <slider :value=\"animation.delay\" v-on:value=\"setDelay\"></slider>\n    </div>\n    <div class=\"group\">\n        <div class=\"label\">时长</div>\n        <slider :value=\"animation.last\" v-on:value=\"setLast\"></slider>\n    </div>\n    <div class=\"group\">\n        <div class=\"label\">重复次数</div>\n        <slider :value=\"animation.repeat\" v-on:value=\"setRepeat\"></slider>\n    </div>\n</div>\n";
 
 /***/ },
-
-/***/ 185:
+/* 187 */
 /***/ function(module, exports) {
 
 	module.exports = "\n\n<component :is=\"componentName\"></component>\n";
 
 /***/ },
-
-/***/ 186:
+/* 188 */
 /***/ function(module, exports) {
 
 	module.exports = "\n\n<div class=\"canvas\" @click=\"canvasClick\">\n    <svg width=\"100%\" height=\"100%\">\n        <template v-for=\"item in add.page.itemList\">\n            <image v-if=\"item.type=='image'\" xlink:href=\"{{item.data}}\" :x=\"item.x\" :y=\"item.y\" :height=\"item.height\" :width=\"item.height\" @click.stop=\"editor(item)\"/>\n        </template>\n    </svg>\n    <div class=\"editor\">\n        <div class=\"editor-item\" v-for=\"item in add.page.itemList\" v-if=\"item.editor\" :style=\"{'left':item.x+'px','top':item.y+'px','width':item.width+'px','height':item.height+'px'}\"\n             @click.stop=\"editor(item)\" @touchstart=\"touchStart(item,$event)\" @touchmove=\"touchMove(item,$event)\" @touchcancel=\"touchEnd(item,$event)\" @touchend=\"touchEnd(item,$event)\"></div>\n    </div>\n</div>\n<dialog></dialog>\n<win></win>\n";
 
-/***/ },
-
-/***/ 222:
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	__vue_script__ = __webpack_require__(223)
-	if (__vue_script__ &&
-	    __vue_script__.__esModule &&
-	    Object.keys(__vue_script__).length > 1) {
-	  console.warn("[vue-loader] public\\app\\page\\add\\win\\TimeLine.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(224)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	if (__vue_template__) {
-	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
-	}
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "_v-076ca8c4/TimeLine.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ },
-
-/***/ 223:
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	// <template>
-	//     <g>
-	//         <rect x="0" y="0" width="5" height="20" ry="10" style="fill: #66cc99;"></rect>
-	//         <rect x="5" y="0" width="10" height="20" ry="10" style="fill: #ff99cc;"></rect>
-	//         <rect x="15" y="0" width="15" height="20" ry="10" style="fill: #99cc33;"></rect>
-	//         <rect x="30" y="0" width="20" height="20" ry="10" style="fill: #ccccff;"></rect>
-	//         <rect x="50" y="0" width="60" height="20" ry="10" style="fill: #99ccff;"></rect>
-	//     </g>
-	// </template>
-	// <script type="text/ecmascript-6">
-	exports.default = {
-	    props: {
-	        item: {
-	            type: Array,
-	            default: function _default() {
-	                return [];
-	            }
-	        }
-	    },
-	    ready: function ready() {
-	        this.$log('item');
-	    }
-	};
-	// </script>
-	/* generated by vue-loader */
-
-/***/ },
-
-/***/ 224:
-/***/ function(module, exports) {
-
-	module.exports = "\n<g>\n    <rect x=\"0\" y=\"0\" width=\"5\" height=\"20\" ry=\"10\" style=\"fill: #66cc99;\"></rect>\n    <rect x=\"5\" y=\"0\" width=\"10\" height=\"20\" ry=\"10\" style=\"fill: #ff99cc;\"></rect>\n    <rect x=\"15\" y=\"0\" width=\"15\" height=\"20\" ry=\"10\" style=\"fill: #99cc33;\"></rect>\n    <rect x=\"30\" y=\"0\" width=\"20\" height=\"20\" ry=\"10\" style=\"fill: #ccccff;\"></rect>\n    <rect x=\"50\" y=\"0\" width=\"60\" height=\"20\" ry=\"10\" style=\"fill: #99ccff;\"></rect>\n</g>\n";
-
 /***/ }
-
-});
+]));
 //# sourceMappingURL=2.2.js.map

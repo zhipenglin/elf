@@ -5,8 +5,9 @@ import Page from '../model/Page'
 const state={
     stateType:'init',
     setting:{
-        multSelect:true,
+        multSelect:false,//暂时去掉多选功能
     },
+    animation:{},
     page:new Page()
 };
 
@@ -50,6 +51,15 @@ const mutations={
             state.page.cancelAllEditor();
         }
         item.switchEditor();
+    },
+    //ANIMATION
+    ANIMATION_CHANGE(state,item){
+        state.animation[item.key]=item.value;
+    },
+    ANIMATION_ADD(state){
+        var item=state.page.getFirstEditorItem();
+        item.addAnimation(state.animation);
+        state.animation={};
     },
     //MULT
     MULT_CHANGE(state){

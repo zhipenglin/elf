@@ -1,62 +1,35 @@
 <template>
     <div class="window-outer add-animation">
         <div class="group title">
-            <button-group :active.sync="animationType" :list="animationTypeList"></button-group>
+            <button-group :active="animation.type" :list="animationTypeList" v-on:value="setType"></button-group>
         </div>
         <div class="group">
             <div class="label">延迟</div>
-            <slider :value.sync="data.delay"></slider>
+            <slider :value="animation.delay" v-on:value="setDelay"></slider>
         </div>
         <div class="group">
             <div class="label">时长</div>
-            <slider :value.sync="data.last"></slider>
+            <slider :value="animation.last" v-on:value="setLast"></slider>
         </div>
         <div class="group">
             <div class="label">重复次数</div>
-            <slider :value.sync="data.repeat"></slider>
-        </div>
-        <div class="option-area" v-if="animationType==0">
-            <div class="group">
-                <div class="label">开始值(透明度)</div>
-                <slider></slider>
-            </div>
-            <div class="group">
-                <div class="label">结束值(透明度)</div>
-                <slider></slider>
-            </div>
-        </div>
-        <div class="option-area" v-if="animationType==1">
-            <div class="group">
-                <div class="label">开始值(X轴)</div>
-                <slider></slider>
-            </div>
-            <div class="group">
-                <div class="label">结束值(X轴)</div>
-                <slider></slider>
-            </div>
-            <div class="group">
-                <div class="label">开始值(Y轴)</div>
-                <slider></slider>
-            </div>
-            <div class="group">
-                <div class="label">结束值(Y轴)</div>
-                <slider></slider>
-            </div>
-            <div class="group">
-                <div class="label">开始值(Z轴)</div>
-                <slider></slider>
-            </div>
-            <div class="group">
-                <div class="label">结束值(Z轴)</div>
-                <slider></slider>
-            </div>
+            <slider :value="animation.repeat" v-on:value="setRepeat"></slider>
         </div>
     </div>
 </template>
 <script type="text/ecmascript-6">
+    import {animationChange} from '../../../vuex/actions/add'
     import ButtonGroup from '../../../modules/buttonGroup'
     import slider from '../../../modules/slider'
     export default{
+        vuex:{
+            actions:{
+                animationChange
+            },
+            getters: {
+                animation: state=>state.add.animation
+            }
+        },
         typeMap:[{
             type:'opacity',
             text:'透明度'
@@ -84,6 +57,29 @@
                     repeat:0
                 }
             }
+        },
+        methods:{
+            setType(value){
+                this.animationChange({
+                    key:'type',value
+                });
+                console.log(this.animation);
+            },
+            setDelay(value){
+                this.animationChange({
+                    key:'delay',value
+                });
+            },
+            setLast(value){
+                this.animationChange({
+                    key:'last',value
+                });
+            },
+            setRepeat(value){
+                this.animationChange({
+                    key:'repeat',value
+                });
+            },
         },
         components:{
             slider,ButtonGroup

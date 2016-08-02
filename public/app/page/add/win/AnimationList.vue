@@ -1,5 +1,5 @@
 <template>
-    <div class="window-outer animation-list">
+    <div class="window-outer animation-list" @touchstart.prevent="">
         <svg viewBox="-1 810 200 200">
             <g :style="{transform:`translateX(${(1+n)*30}px)`}" v-for="n in 34">
                 <line x1="0" y1="0" x2="0" y2="1000" class="refer"/>

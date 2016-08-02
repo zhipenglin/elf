@@ -12,7 +12,6 @@
         props:{
             value:{
                 type:Number,
-                twoWay:true,
                 default:0
             }
         },
@@ -36,13 +35,17 @@
                 }else if(offset>100){
                     offset=100;
                 }
-                this.value=offset;
+                this.setValue(offset);
             },
             cancel(){
                 this.active=false;
             },
             clickHandler(e){
-                this.value=100*e.offsetX/this.$el.offsetWidth
+                this.setValue(100*e.offsetX/this.$el.offsetWidth);
+            },
+            setValue(value){
+                this.value=value;
+                this.$dispatch('value',value);
             }
         }
     }

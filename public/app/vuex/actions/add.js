@@ -23,6 +23,7 @@ export const itemDel=({ dispatch, state },...args)=>{
 export const itemUpIndex=makeAction('ITEM_UP_INDEX');
 export const itemDownIndex=makeAction('ITEM_DOWN_INDEX');
 export const itemEditor=({ dispatch, state },...args)=>{
+
     dispatch('ITEM_EDITOR',...args);
     if(state.add.page.hasEditorItem()){
         dispatch('STATE_CHANGE_ATTR');
@@ -30,6 +31,14 @@ export const itemEditor=({ dispatch, state },...args)=>{
         dispatch('STATE_CHANGE_INIT');
     }
 };
+
+//ANIMATION
+export const animationChange=makeAction('ANIMATION_CHANGE');
+export const animationAdd=({ dispatch, state },...args)=>{
+    dispatch('ANIMATION_ADD');
+    dispatch('STATE_CHANGE_ANIM_LIST');
+};
+
 //MULT
 
 export const multChange=makeAction('MULT_CHANGE');
